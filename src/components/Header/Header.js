@@ -5,15 +5,21 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => {
 	return (
-		<Navbar bg='light' variant='light'>
-			<Navbar.Brand>Covid-19 Data</Navbar.Brand>
+		<Navbar variant='light' expand='md'>
+			<LinkContainer to='/home'>
+				<Navbar.Brand>Covid-19 Data</Navbar.Brand>
+			</LinkContainer>
+			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav>
-					<LinkContainer to='/'>
+					<LinkContainer to='/home'>
 						<Nav.Link>Home</Nav.Link>
 					</LinkContainer>
 					<LinkContainer to='/search'>
 						<Nav.Link>Country Search</Nav.Link>
+					</LinkContainer>
+					<LinkContainer to='/countries'>
+						<Nav.Link>Country List</Nav.Link>
 					</LinkContainer>
 				</Nav>
 			</Navbar.Collapse>

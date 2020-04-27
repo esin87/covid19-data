@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
-import Header from '../Header/Header';
-import SearchHeader from '../SearchHeader/SearchHeader';
 
 const Search = () => {
 	const searchOptions = {
@@ -43,14 +41,12 @@ const Search = () => {
 	}
 	return (
 		<div>
-			<Header />
 			<SearchForm
 				handleChange={handleChange}
 				handleSubmit={handleSubmit}
 				searchString={searchString}
 			/>
-			<SearchHeader lastSearch={lastSearch} />
-			<SearchResults data={data} />
+			{lastSearch && <SearchResults data={data} lastSearch={lastSearch} />}
 		</div>
 	);
 };

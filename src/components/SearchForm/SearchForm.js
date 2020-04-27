@@ -6,8 +6,9 @@ const SearchForm = (props) => {
 	const { handleSubmit, handleChange, searchString } = props;
 
 	return (
-		<Form onSubmit={handleSubmit}>
+		<Form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
 			<Form.Group>
+				<h2>Country Search</h2>
 				<Form.Control
 					size='lg'
 					placeholder='Search by country name'
@@ -17,6 +18,10 @@ const SearchForm = (props) => {
 					onChange={handleChange}
 					value={searchString}
 				/>
+				<Form.Text className='text-muted'>
+					Search by full or partial country name. No abbreviations, i.e.,
+					"United States", not "USA".
+				</Form.Text>
 			</Form.Group>
 			<Button type='submit'>Submit</Button>
 		</Form>
