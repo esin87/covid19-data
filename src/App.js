@@ -3,7 +3,7 @@ import './App.css';
 import SearchForm from './components/SearchForm/SearchForm';
 import SearchResults from './components/SearchResults/SearchResults';
 import Header from './components/Header/Header';
-// import data from './data.json';
+import countryData from './data.json';
 
 const App = () => {
 	const searchOptions = {
@@ -12,13 +12,14 @@ const App = () => {
 	};
 
 	const [data, setData] = useState([]);
+	const [searchString, setSearchString] = useState('united states');
+
 	useEffect(() => {
 		getData();
 		// eslint-disable-next-line
 	}, []);
 
 	function getData() {
-		const searchString = 'switzerland';
 		const url = `${searchOptions.api}${searchOptions.endpoint}${searchString}`;
 		fetch(url)
 			.then((res) => res.json())
@@ -26,10 +27,23 @@ const App = () => {
 			.catch((err) => console.error(err));
 	}
 
+	function handleChange(event) {
+		setSearchString(event.target.value);
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+		getData();
+	}
+
 	return (
 		<div className='App'>
 			<Header />
-			<SearchForm />
+			<SearchForm
+				handleChange={handleChange}
+				handleSubmit={handleSubmit}
+				searchString={searchString}
+			/>
 			<SearchResults data={data} />
 		</div>
 	);
