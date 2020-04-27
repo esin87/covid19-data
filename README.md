@@ -24,6 +24,7 @@ The application was intended to create a straightforward access point for up-to-
 - Polish styling
 - Include global overview of COVID cases
 - Add data graphics
+- Add testing coverage
 
 ## Acknowledgements
 
