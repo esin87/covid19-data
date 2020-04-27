@@ -1,6 +1,6 @@
 # Covid-19 Data
 
-This site was created to provide a simple, free and open-source user interface for [covid19api.com](https://covid19api.com/).
+This site was created to provide a simple, free and open-source user interface for [covid19api.com](https://covid19api.com/). See the deployed site [here](https://esin87.github.io/covid19-data/).
 
 The application was intended to create a straightforward access point for up-to-date statistics on COVID-19 confirmed cases, deaths, and recoveries.
 
