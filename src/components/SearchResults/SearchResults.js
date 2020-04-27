@@ -15,7 +15,6 @@ const SearchResults = ({ data }) => {
 				<li>Confirmed cases: {latestData.Confirmed}</li>
 				<li>Deaths: {latestData.Deaths}</li>
 				<li>Recovered: {latestData.Recovered}</li>
-				<li>Active cases: {latestData.Active}</li>
 			</ul>
 			<p>
 				Last updated:{' '}
