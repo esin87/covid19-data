@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Covid-19 Data
 
-## Available Scripts
+This site was created to provide a simple, free and open-source user interface for [covid19api.com](https://covid19api.com/).
 
-In the project directory, you can run:
+The application was intended to create a straightforward access point for up-to-date statistics on COVID-19 confirmed cases, deaths, and recoveries.
 
-### `yarn start`
+## Technologies Used
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React for a SPA with dynamic client-side rendering
+- React Router for page navigation
+- React Bootstrap for styled components
+- MomentJS for React for date parsing
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Available Features
 
-### `yarn test`
+#### Current:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Query the API with a search string that returns available information for the country
+- See available country list, and click on country to return specific results
 
-### `yarn build`
+#### Future:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Refactor and DRY up React code (move state upward and componentize reused code)
+- Polish styling
+- Include global overview of COVID cases
+- Add data graphics
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Acknowledgements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application wouldn't be possible without help from numerous sources, including:
 
-### `yarn eject`
+- [Kyle Redelinghuys](https://twitter.com/ksredelinghuys), who created the [covid19api](https://covid19api.com/)
+- Jennifer Meade, whose lessons and tutorials on React have been invaluable
+- Tom Pawlak's [blogpost](https://blog.abelotech.com/posts/number-currency-formatting-javascript/), which helped me quickly parse commas into long numbers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contribution Guidelines
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This is a work in progress, and any suggestions, contributions or bug identifications are more than welcome. Please submit a pull request or issue as needed.
