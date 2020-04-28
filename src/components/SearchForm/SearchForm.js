@@ -6,7 +6,7 @@ const SearchForm = (props) => {
 	const { handleSubmit, handleChange, searchString } = props;
 
 	return (
-		<Form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
+		<Form onSubmit={handleSubmit}>
 			<Form.Group>
 				<h2>Country Search</h2>
 				<Form.Control

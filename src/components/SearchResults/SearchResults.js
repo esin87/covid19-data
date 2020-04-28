@@ -18,7 +18,7 @@ const SearchResults = ({ data, lastSearch }) => {
 		return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 	}
 	return (
-		<div className='data-container' style={{ marginTop: '2.5rem' }}>
+		<div className='data-container'>
 			<h3>{latestData.Country}</h3>
 			<Table>
 				<thead>

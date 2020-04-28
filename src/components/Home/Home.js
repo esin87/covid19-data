@@ -5,9 +5,9 @@ import { LinkContainer } from 'react-router-bootstrap';
 const Home = () => {
 	return (
 		<Jumbotron>
-			<h1>Covid-19 Data</h1>
+			<h1>COVID-19 Data</h1>
 			<p>
-				A free, open-source tool to search for up-to-date Covid-19 case
+				A free, open-source tool to search for up-to-date COVID-19 case
 				information by country.{' '}
 			</p>
 			<p>
