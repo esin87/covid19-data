@@ -2,7 +2,7 @@
 
 This site was created to provide a simple, free and open-source user interface for [covid19api.com](https://covid19api.com/). See the deployed site [here](https://esin87.github.io/covid19-data/).
 
-The application was intended to create a straightforward access point for up-to-date statistics on COVID-19 confirmed cases, deaths, and recoveries.
+This application is a straightforward access point for up-to-date statistics on COVID-19 confirmed cases, deaths, and recoveries by country.
 
 ## Technologies Used
 
@@ -20,11 +20,18 @@ The application was intended to create a straightforward access point for up-to-
 
 #### Future:
 
-- Refactor and DRY up React code (move state upward and componentize reused code)
+- Refactor and DRY up React code (move state upward and component-ize reused code)
 - Polish styling
 - Include global overview of COVID cases
 - Add data graphics
 - Add testing coverage
+- Add About page
+
+## Installation Instructions
+
+- Clone the repo down locally.
+- Navigate into the project folder and run `npm install` to download required dependencies.
+- Run `npm start` to launch the React development server.
 
 ## Acknowledgements
 
