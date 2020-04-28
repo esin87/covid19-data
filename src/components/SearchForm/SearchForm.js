@@ -2,9 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const SearchForm = (props) => {
-	const { handleSubmit, handleChange, searchString } = props;
-
+const SearchForm = ({ handleSubmit, handleChange, searchString }) => {
 	return (
 		<Form onSubmit={handleSubmit}>
 			<Form.Group>

@@ -31,7 +31,7 @@ const CountryDetail = (props) => {
 	if (countryInfo) {
 		return (
 			<div>
-				<h2>Covid-19 Summary for {countryInfo.Country}</h2>
+				<h2>COVID-19 Summary for {countryInfo.Country}</h2>
 				<Table>
 					<thead>
 						<tr>

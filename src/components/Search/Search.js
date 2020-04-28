@@ -1,44 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
 
-const Search = () => {
-	const searchOptions = {
-		api: 'https://api.covid19api.com/',
-		endpoint: 'total/country/',
-	};
-
-	const [data, setData] = useState([]);
-	const [searchString, setSearchString] = useState('');
-	const [lastSearch, setLastSearch] = useState('');
-
+const Search = ({
+	data,
+	setData,
+	lastSearch,
+	setLastSearch,
+	handleChange,
+	handleSubmit,
+	searchString,
+	formatNumber,
+}) => {
 	useEffect(() => {
-		getData(searchString);
+		return () => {
+			setData('');
+			setLastSearch('');
+		};
 		// eslint-disable-next-line
 	}, []);
-
-	function getData(searchString) {
-		if (searchString) {
-			const url = `${searchOptions.api}${searchOptions.endpoint}${searchString}`;
-			fetch(url)
-				.then((res) => res.json())
-				.then((res) => {
-					setData(res);
-					setLastSearch(searchString);
-					setSearchString('');
-				})
-				.catch((err) => console.error(err));
-		}
-	}
-
-	function handleChange(event) {
-		setSearchString(event.target.value);
-	}
-
-	function handleSubmit(event) {
-		event.preventDefault();
-		getData(searchString);
-	}
 	return (
 		<div>
 			<SearchForm
@@ -46,7 +26,13 @@ const Search = () => {
 				handleSubmit={handleSubmit}
 				searchString={searchString}
 			/>
-			{lastSearch && <SearchResults data={data} lastSearch={lastSearch} />}
+			{lastSearch && (
+				<SearchResults
+					data={data}
+					lastSearch={lastSearch}
+					formatNumber={formatNumber}
+				/>
+			)}
 		</div>
 	);
 };
