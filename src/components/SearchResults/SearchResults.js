@@ -1,5 +1,5 @@
 import React from 'react';
-import Moment from 'react-moment';
+import LastUpdated from '../LastUpdated/LastUpdated'
 import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
 const SearchResults = ({ data, lastSearch, formatNumber }) => {
@@ -12,10 +12,8 @@ const SearchResults = ({ data, lastSearch, formatNumber }) => {
 	}
 
 	const latestData = data[data.length - 1];
-	const dateToFormat = latestData.Date;
-	// thank you to https://blog.abelotech.com/posts/number-currency-formatting-javascript/ for a tutorial on using regex to parse commas into numbers
 
-	return (
+		return (
 		<div className='data-container' style={{ marginTop: '2.5rem' }}>
 			<h3>{latestData.Country}</h3>
 			<Table>
@@ -36,13 +34,7 @@ const SearchResults = ({ data, lastSearch, formatNumber }) => {
 					</tr>
 				</tbody>
 			</Table>
-			<p className='text-muted' style={{ marginTop: '0.5rem' }}>
-				Last updated:{' '}
-				<Moment fromNow ago>
-					{dateToFormat}
-				</Moment>{' '}
-				ago
-			</p>
+			<LastUpdated date={latestData.Date} />
 		</div>
 	);
 };

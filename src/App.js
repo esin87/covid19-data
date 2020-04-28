@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Search from './components/Search/Search';
 import Countries from './components/Countries/Countries';
 import CountryDetail from './components/CountryDetail/CountryDetail';
+import About from './components/About/About'
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -77,11 +78,17 @@ const App = () => {
 								/>
 							)}
 						/>
+						<Route exact path="/about" component={About} />
 						<Route exact path='/countries' component={Countries} />
 						<Route
 							exact
 							path='/countries/:name'
-							render={(props) => <CountryDetail {...props} />}
+							render={(props) => (
+								<CountryDetail
+									match={props.match}
+									formatNumber={formatNumber}
+								/>
+							)}
 						/>
 						<Redirect to='/home' />
 					</Switch>

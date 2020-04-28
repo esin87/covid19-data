@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import Moment from 'react-moment';
+import LastUpdated from '../LastUpdated/LastUpdated';
 import Table from 'react-bootstrap/Table';
 
-const CountryDetail = (props) => {
+const CountryDetail = ({ match, formatNumber }) => {
 	const [countryInfo, setCountryInfo] = useState('');
 	const [error, setError] = useState('Loading ...');
 	function getCountryInfo() {
-		const url = `https://api.covid19api.com/total/country/${props.match.params.name}`;
+		const url = `https://api.covid19api.com/total/country/${match.params.name}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
 				if (res.length === 0) {
-					setError('No data available for selected country.');
+					setError('No data available for selected locality.');
 				} else {
 					setCountryInfo(res[res.length - 1]);
 				}
 			})
-			.catch((err) => console.error(err));
+			.catch((err) =>
+				setError('Oops, something went wrong. Please try again.')
+			);
 	}
 
 	useEffect(() => {
@@ -24,14 +26,10 @@ const CountryDetail = (props) => {
 		// eslint-disable-next-line
 	}, []);
 
-	function formatNumber(num) {
-		return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-	}
-
 	if (countryInfo) {
 		return (
 			<div>
-				<h2>COVID-19 Summary for {countryInfo.Country}</h2>
+				<h2>{countryInfo.Country}</h2>
 				<Table>
 					<thead>
 						<tr>
@@ -50,13 +48,7 @@ const CountryDetail = (props) => {
 						</tr>
 					</tbody>
 				</Table>
-				<p className='text-muted'>
-					Last updated:{' '}
-					<Moment fromNow ago>
-						{countryInfo.Date}
-					</Moment>{' '}
-					ago
-				</p>
+				<LastUpdated date={countryInfo.Date} />
 			</div>
 		);
 	}
