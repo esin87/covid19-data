@@ -5,7 +5,11 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => {
 	return (
-		<Navbar variant='light' expand='md' style={{ marginBottom: '2.5rem' }}>
+		<Navbar
+			collapseOnSelect
+			variant='light'
+			expand='md'
+			style={{ marginBottom: '2.5rem' }}>
 			<LinkContainer to='/home'>
 				<Navbar.Brand>COVID-19 Data</Navbar.Brand>
 			</LinkContainer>
