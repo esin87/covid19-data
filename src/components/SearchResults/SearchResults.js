@@ -1,6 +1,6 @@
 import React from 'react';
 import LastUpdated from '../LastUpdated/LastUpdated';
-import Table from 'react-bootstrap/Table';
+import ResultsTable from '../ResultsTable/ResultsTable';
 import Alert from 'react-bootstrap/Alert';
 
 const SearchResults = ({ data, lastSearch, formatNumber }) => {
@@ -17,24 +17,7 @@ const SearchResults = ({ data, lastSearch, formatNumber }) => {
 	return (
 		<div className='data-container' style={{ marginTop: '2.5rem' }}>
 			<h3>{latestData.Country}</h3>
-			<Table>
-				<thead>
-					<tr>
-						<th></th>
-						<th>Confirmed cases</th>
-						<th>Deaths</th>
-						<th>Recovered</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Total</td>
-						<td>{formatNumber(latestData.Confirmed)}</td>
-						<td>{formatNumber(latestData.Deaths)}</td>
-						<td>{formatNumber(latestData.Recovered)}</td>
-					</tr>
-				</tbody>
-			</Table>
+			<ResultsTable formatNumber={formatNumber} data={latestData} />
 			<LastUpdated date={latestData.Date} />
 		</div>
 	);

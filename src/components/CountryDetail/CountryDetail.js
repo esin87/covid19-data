@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LastUpdated from '../LastUpdated/LastUpdated';
-import Table from 'react-bootstrap/Table';
+import ResultsTable from '../ResultsTable/ResultsTable';
 
 const CountryDetail = ({ match, formatNumber }) => {
 	const [countryInfo, setCountryInfo] = useState('');
@@ -30,24 +30,7 @@ const CountryDetail = ({ match, formatNumber }) => {
 		return (
 			<div>
 				<h2>{countryInfo.Country}</h2>
-				<Table>
-					<thead>
-						<tr>
-							<th></th>
-							<th>Confirmed</th>
-							<th>Deaths</th>
-							<th>Recovered</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Total</td>
-							<td>{formatNumber(countryInfo.Confirmed)}</td>
-							<td>{formatNumber(countryInfo.Deaths)}</td>
-							<td>{formatNumber(countryInfo.Recovered)}</td>
-						</tr>
-					</tbody>
-				</Table>
+				<ResultsTable formatNumber={formatNumber} data={countryInfo} />
 				<LastUpdated date={countryInfo.Date} />
 			</div>
 		);
