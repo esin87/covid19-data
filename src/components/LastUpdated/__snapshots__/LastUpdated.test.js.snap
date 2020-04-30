@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LastUpdated component should match the snapshot 1`] = `"<p class=\\"text-muted\\" style=\\"margin-top: 0.5rem;\\">Last updated: <time datetime=\\"1584393053868\\">a month</time> ago</p>"`;

@@ -1,7 +1,6 @@
 import React from 'react';
 import App from './App';
 import { mount, render } from 'enzyme';
-import { HashRouter } from 'react-router-dom';
 
 describe('App component', () => {
 	let component;
