@@ -23,6 +23,8 @@ This application is a straightforward access point for up-to-date statistics on 
 - [ ] Refactor and DRY up React code (move state upward and component-ize reused code)
 - [ ] Polish styling
 - [x] Include global summary of COVID-19 cases
+- [ ] Loading spinner/message for Country Search
+- [ ] Render more detailed information on Country List selection
 - [ ] Add graphics
 - [ ] Add testing coverage
 - [x] Add About page

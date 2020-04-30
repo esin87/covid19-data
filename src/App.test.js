@@ -1,9 +1,31 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import { mount, render } from 'enzyme';
+import { HashRouter } from 'react-router-dom';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+	let component;
+	beforeEach(() => {
+		component = mount(<App />);
+	});
+
+	it('renders', () => {
+		render(component);
+	});
+
+	it('should match the snapshot', () => {
+		expect(component.html()).toMatchSnapshot();
+	});
+
+	it('contains a main element with the appropriate text', () => {
+		expect(component.find('main').text()).toBe(
+			'COVID-19 DataA free, open-source tool to search for up-to-date COVID-19 case information by country. Data courtesy of covid19api.com.Start searching'
+		);
+	});
+
+	it('contains a footer element with the appropriate text', () => {
+		expect(component.find('footer').text()).toBe(
+			'Created by Esin Saribudak. See source code here.'
+		);
+	});
 });
