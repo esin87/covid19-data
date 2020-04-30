@@ -15,17 +15,17 @@ This application is a straightforward access point for up-to-date statistics on 
 
 #### Current:
 
-- Query the API with a search string that returns available case information for the country
-- See available country list, and click on country to return specific results
+- [x] Query the API with a search string that returns available case information for the country
+- [x] See available country list, and click on country to return specific results
 
 #### Future:
 
-- Refactor and DRY up React code (move state upward and component-ize reused code)
-- Polish styling
-- Include global overview of COVID-19 cases
-- Add data graphics
-- Add testing coverage
-- Add About page
+- [ ] Refactor and DRY up React code (move state upward and component-ize reused code)
+- [ ] Polish styling
+- [x] Include global summary of COVID-19 cases
+- [ ] Add graphics
+- [ ] Add testing coverage
+- [x] Add About page
 
 ## Installation Instructions
 
