@@ -40,6 +40,7 @@ This application wouldn't be possible without help from numerous sources, includ
 - [Kyle Redelinghuys](https://twitter.com/ksredelinghuys), who created the [covid19api](https://covid19api.com/)
 - Jennifer Meade, whose lessons and tutorials on React have been invaluable
 - Tom Pawlak's [blog post](https://blog.abelotech.com/posts/number-currency-formatting-javascript/), which helped me quickly parse commas into long numbers
+- All my instructors, colleagues and classmates at GeneralAssembly, where I learned to code
 
 ## Contribution Guidelines
 
