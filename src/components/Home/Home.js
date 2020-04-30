@@ -21,7 +21,7 @@ const Home = () => {
 				.
 			</p>
 			<p>
-				<LinkContainer to='/search'>
+				<LinkContainer to='/countries'>
 					<Button variant='primary'>Start searching</Button>
 				</LinkContainer>
 			</p>

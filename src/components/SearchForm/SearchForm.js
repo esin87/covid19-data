@@ -6,7 +6,7 @@ const SearchForm = ({ handleSubmit, handleChange, searchString }) => {
 	return (
 		<Form onSubmit={handleSubmit}>
 			<Form.Group>
-				<h2>Country Search</h2>
+				<h2 style={{ marginBottom: '1.5rem' }}>Country Search</h2>
 				<Form.Control
 					size='lg'
 					placeholder='Search by country name'

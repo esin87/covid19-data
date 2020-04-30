@@ -8,14 +8,10 @@ import Search from './components/Search/Search';
 import Countries from './components/Countries/Countries';
 import CountryDetail from './components/CountryDetail/CountryDetail';
 import About from './components/About/About';
+import Global from './components/Global/Global';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-	const searchOptions = {
-		api: 'https://api.covid19api.com/',
-		endpoint: 'total/country/',
-	};
-
 	const [data, setData] = useState([]);
 	const [searchString, setSearchString] = useState('');
 	const [lastSearch, setLastSearch] = useState('');
@@ -23,12 +19,15 @@ const App = () => {
 
 	useEffect(() => {
 		getData(searchString);
+		if (error) {
+			setError('');
+		}
 		// eslint-disable-next-line
 	}, []);
 
 	function getData(searchString) {
 		if (searchString) {
-			const url = `${searchOptions.api}${searchOptions.endpoint}${searchString}`;
+			const url = `https://api.covid19api.com/total/country/${searchString}`;
 			fetch(url)
 				.then((res) => res.json())
 				.then((res) => {
@@ -91,6 +90,11 @@ const App = () => {
 									formatNumber={formatNumber}
 								/>
 							)}
+						/>
+						<Route
+							exact
+							path='/global'
+							render={() => <Global formatNumber={formatNumber} />}
 						/>
 						<Redirect to='/home' />
 					</Switch>
