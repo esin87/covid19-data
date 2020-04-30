@@ -36,8 +36,8 @@ const About = () => {
 				search and access the information.
 			</p>
 			<p>
-				This project is a work in progress -- checkout the source code linked in
-				the footer below if you'd like to contribute or have ideas!
+				This project is a work in progress -- check out the source code linked
+				in the footer below if you'd like to contribute or have ideas!
 			</p>
 		</Jumbotron>
 	);

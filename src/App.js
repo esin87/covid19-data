@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Search from './components/Search/Search';
 import Countries from './components/Countries/Countries';
 import CountryDetail from './components/CountryDetail/CountryDetail';
-import About from './components/About/About'
+import About from './components/About/About';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -58,6 +59,7 @@ const App = () => {
 			<Header />
 			<main>
 				<Container>
+					{error && <Alert variant={'danger'}>{error}</Alert>}
 					<Switch>
 						<Route exact path='/home' component={Home} />
 						<Route
@@ -78,7 +80,7 @@ const App = () => {
 								/>
 							)}
 						/>
-						<Route exact path="/about" component={About} />
+						<Route exact path='/about' component={About} />
 						<Route exact path='/countries' component={Countries} />
 						<Route
 							exact

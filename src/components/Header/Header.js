@@ -18,11 +18,11 @@ const Header = () => {
 					<LinkContainer to='/about'>
 						<Nav.Link>About</Nav.Link>
 					</LinkContainer>
-					<LinkContainer to='/search'>
-						<Nav.Link>Country Search</Nav.Link>
-					</LinkContainer>
 					<LinkContainer to='/countries'>
 						<Nav.Link>Country List</Nav.Link>
+					</LinkContainer>
+					<LinkContainer to='/search'>
+						<Nav.Link>Country Search</Nav.Link>
 					</LinkContainer>
 				</Nav>
 			</Navbar.Collapse>
