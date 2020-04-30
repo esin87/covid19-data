@@ -9,7 +9,7 @@ import Countries from './components/Countries/Countries';
 import CountryDetail from './components/CountryDetail/CountryDetail';
 import About from './components/About/About';
 import Global from './components/Global/Global';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 
 const App = () => {
 	const [data, setData] = useState([]);
@@ -55,68 +55,70 @@ const App = () => {
 
 	return (
 		<div className='App'>
-			<Header />
-			<main>
-				<Container>
-					{error && <Alert variant={'danger'}>{error}</Alert>}
-					<Switch>
-						<Route exact path='/home' component={Home} />
-						<Route
-							exact
-							path='/search'
-							render={(props) => (
-								<Search
-									{...props}
-									data={data}
-									setData={setData}
-									lastSearch={lastSearch}
-									searchString={searchString}
-									setLastSearch={setLastSearch}
-									handleChange={handleChange}
-									handleSubmit={handleSubmit}
-									formatNumber={formatNumber}
-									getData={getData}
-								/>
-							)}
-						/>
-						<Route exact path='/about' component={About} />
-						<Route exact path='/countries' component={Countries} />
-						<Route
-							exact
-							path='/countries/:name'
-							render={(props) => (
-								<CountryDetail
-									match={props.match}
-									formatNumber={formatNumber}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path='/global'
-							render={() => <Global formatNumber={formatNumber} />}
-						/>
-						<Redirect to='/home' />
-					</Switch>
-				</Container>
-			</main>
-			<footer className='text-muted'>
-				Created by{' '}
-				<a
-					href='https://esinsaribudak.com'
-					target='_blank'
-					rel='noopener noreferrer'>
-					Esin Saribudak
-				</a>
-				. See source code{' '}
-				<a
-					href='https://github.com/esin87/covid19-data'
-					target='_blank'
-					rel='noopener noreferrer'>
-					here
-				</a>
-				.
-			</footer>
+			<HashRouter basename='/'>
+				<Header />
+				<main>
+					<Container>
+						{error && <Alert variant={'danger'}>{error}</Alert>}
+						<Switch>
+							<Route exact path='/home' component={Home} />
+							<Route
+								exact
+								path='/search'
+								render={(props) => (
+									<Search
+										{...props}
+										data={data}
+										setData={setData}
+										lastSearch={lastSearch}
+										searchString={searchString}
+										setLastSearch={setLastSearch}
+										handleChange={handleChange}
+										handleSubmit={handleSubmit}
+										formatNumber={formatNumber}
+										getData={getData}
+									/>
+								)}
+							/>
+							<Route exact path='/about' component={About} />
+							<Route exact path='/countries' component={Countries} />
+							<Route
+								exact
+								path='/countries/:name'
+								render={(props) => (
+									<CountryDetail
+										match={props.match}
+										formatNumber={formatNumber}
+									/>
+								)}
+							/>
+							<Route
+								exact
+								path='/global'
+								render={() => <Global formatNumber={formatNumber} />}
+							/>
+							<Redirect to='/home' />
+						</Switch>
+					</Container>
+				</main>
+				<footer className='text-muted'>
+					Created by{' '}
+					<a
+						href='https://esinsaribudak.com'
+						target='_blank'
+						rel='noopener noreferrer'>
+						Esin Saribudak
+					</a>
+					. See source code{' '}
+					<a
+						href='https://github.com/esin87/covid19-data'
+						target='_blank'
+						rel='noopener noreferrer'>
+						here
+					</a>
+					.
+				</footer>
+			</HashRouter>
 		</div>
 	);
 };
