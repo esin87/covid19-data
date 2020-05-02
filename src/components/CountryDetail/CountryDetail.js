@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import LastUpdated from '../LastUpdated/LastUpdated';
-import ResultsTable from '../ResultsTable/ResultsTable';
+import ExtendedResultsTable from '../ExtendedResultsTable/ExtendedResultsTable';
 
 const CountryDetail = ({ match, formatNumber }) => {
 	const [countryInfo, setCountryInfo] = useState('');
 	const [error, setError] = useState('Loading ...');
 	function getCountryInfo() {
-		const url = `https://api.covid19api.com/total/country/${match.params.name}`;
+		const url = `https://api.covid19api.com/summary`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				if (res.length === 0) {
+				const requestedCountry = res.Countries.find(
+					(country) => country.Slug === match.params.name
+				);
+				if (!requestedCountry) {
 					setError('No data available for selected locality.');
 				} else {
-					setCountryInfo(res[res.length - 1]);
+					setCountryInfo(requestedCountry);
 				}
 			})
 			.catch((err) =>
@@ -30,10 +33,14 @@ const CountryDetail = ({ match, formatNumber }) => {
 		return (
 			<div>
 				<h2>{countryInfo.Country}</h2>
-				<ResultsTable formatNumber={formatNumber} data={countryInfo} />
+				<ExtendedResultsTable formatNumber={formatNumber} data={countryInfo} />
 				<LastUpdated date={countryInfo.Date} />
 			</div>
 		);
+	}
+
+	if (!countryInfo) {
+		return <div>{error}</div>;
 	}
 	return <div>{error}</div>;
 };
