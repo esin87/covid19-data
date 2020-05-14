@@ -22,9 +22,9 @@ const Header = () => {
 					<LinkContainer to='/countries'>
 						<Nav.Link>Country List</Nav.Link>
 					</LinkContainer>
-					<LinkContainer to='/search'>
+					{/* <LinkContainer to='/search'>
 						<Nav.Link>Country Search</Nav.Link>
-					</LinkContainer>
+					</LinkContainer> */}
 					<LinkContainer to='/global'>
 						<Nav.Link>Global Summary</Nav.Link>
 					</LinkContainer>

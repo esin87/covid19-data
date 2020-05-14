@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
 
 const Global = ({ formatNumber }) => {
-	const [globalData, setGlobalData] = useState('');
+	const [globalData, setGlobalData] = useState(null);
 	const [error, setError] = useState('');
 
 	useEffect(() => {
@@ -15,24 +15,23 @@ const Global = ({ formatNumber }) => {
 		// eslint-disable-next-line
 	}, []);
 
-	function getGlobalData() {
+	async function getGlobalData() {
 		const url = 'https://api.covid19api.com/summary';
-		fetch(url)
-			.then((res) => res.json())
-			.then((res) => {
-				setGlobalData(res.Global);
-			})
-			.catch((err) =>
-				setError('Oops, something went wrong! Please try again.')
-			);
-	}
-
-	if (!globalData) {
-		return <div>Loading...</div>;
+		try {
+			const response = await fetch(url);
+			const data = await response.json();
+			setGlobalData(data.Global);
+		} catch (err) {
+			setError('Oops, something went wrong! Please try again.');
+		}
 	}
 
 	if (error) {
 		return <Alert variant={'danger'}>{error}</Alert>;
+	}
+
+	if (!globalData) {
+		return <div>Loading...</div>;
 	}
 
 	return (
