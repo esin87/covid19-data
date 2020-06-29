@@ -14,16 +14,16 @@ const ExtendedResultsTable = ({ data, formatNumber }) => {
 			</thead>
 			<tbody>
 				<tr>
-					<td>New</td>
-					<td>{formatNumber(data.NewConfirmed)}</td>
-					<td>{formatNumber(data.NewDeaths)}</td>
-					<td>{formatNumber(data.NewRecovered)}</td>
-				</tr>
-				<tr>
 					<td>Total</td>
 					<td>{formatNumber(data.TotalConfirmed)}</td>
 					<td>{formatNumber(data.TotalDeaths)}</td>
 					<td>{formatNumber(data.TotalRecovered)}</td>
+				</tr>
+				<tr>
+					<td>New</td>
+					<td>{formatNumber(data.NewConfirmed)}</td>
+					<td>{formatNumber(data.NewDeaths)}</td>
+					<td>{formatNumber(data.NewRecovered)}</td>
 				</tr>
 			</tbody>
 		</Table>
