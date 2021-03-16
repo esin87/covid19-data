@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LastUpdated from '../LastUpdated/LastUpdated';
 import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Global = ({ formatNumber }) => {
 	const [globalData, setGlobalData] = useState(null);
@@ -31,7 +32,12 @@ const Global = ({ formatNumber }) => {
 	}
 
 	if (!globalData) {
-		return <div>Loading...</div>;
+		return (
+			<div>
+				<Spinner animation='grow' role='status' variant='primary'></Spinner>
+				Loading data...
+			</div>
+		);
 	}
 
 	return (
