@@ -10,6 +10,7 @@ This application is a straightforward access point for up-to-date statistics on 
 - React Router for page navigation
 - React Bootstrap for styled components
 - MomentJS for React for date parsing
+- Jest/Enzyme for component testing
 
 ## Available Features
 
@@ -17,21 +18,22 @@ This application is a straightforward access point for up-to-date statistics on 
 
 - [x] Query the API with a search string that returns available case information for the country
 - [x] See available country list, and click on country to return specific results
+- [x] Include global summary of COVID-19 cases
+- [x] Loading spinner/message for Country Search
+- [x] Add testing coverage
+- [x] Add About page
 
 #### Future:
 
 - [ ] Refactor and DRY up React code (move state upward and component-ize reused code)
 - [ ] Polish styling
-- [x] Include global summary of COVID-19 cases
-- [ ] Loading spinner/message for Country Search
 - [ ] Render more detailed information on Country List selection
 - [ ] Add graphics
-- [ ] Add testing coverage
-- [x] Add About page
 
 ## Installation Instructions
 
 - Clone the repo down locally.
+- Be sure to have [Node and NPM](https://nodejs.org/en/download/) installed.
 - Navigate into the project folder and run `npm install` to download required dependencies.
 - Run `npm start` to launch the React development server.
 
@@ -42,7 +44,7 @@ This application wouldn't be possible without help from numerous sources, includ
 - [Kyle Redelinghuys](https://twitter.com/ksredelinghuys), who created the [covid19api](https://covid19api.com/)
 - Jennifer Meade, whose lessons and tutorials on React have been invaluable
 - Tom Pawlak's [blog post](https://blog.abelotech.com/posts/number-currency-formatting-javascript/), which helped me quickly parse commas into long numbers
-- All my instructors, colleagues and classmates at GeneralAssembly, where I learned to code
+- All my instructors, colleagues and classmates at General Assembly, where I learned to code &hearts;
 
 ## Contribution Guidelines
 
